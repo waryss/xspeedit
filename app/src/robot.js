@@ -1,18 +1,23 @@
 'use strict'
 
-import Chain from './chain';
+import Chain from "./chain";
 
 export default class Robot {
 
     constructor() {
-        this.chain = new Chain();
+        this.chains = [];
     }
 
     process(input) {
-        console.log(`Items : ${input}`);
-        this.chain.init(input);
-        this.chain.start();
-        console.log(`Optimized robot : ${this.chain.packages} => ${this.chain.packets.length} cartons utilisés`);
+        let chain = new Chain();
+        this.chains.push(chain);
+        chain.init(input);
+        chain.start();
+        console.log(`Optimized robot : ${chain.packages} => ${chain.packets.length} used packets`);
+    }
+
+    stop() {
+        this.chains = [];
     }
 
 }
