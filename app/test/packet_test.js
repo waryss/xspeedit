@@ -1,7 +1,7 @@
 'use strict'
 
-import assert from "assert";
-import Packet from "../src/packet";
+import assert from 'assert';
+import Packet from '../src/packet';
 
 describe('packet', function () {
 

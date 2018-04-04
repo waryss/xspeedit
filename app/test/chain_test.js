@@ -14,7 +14,6 @@ describe('chain', function () {
         chain.start();
 
         assert.equal(chain.packages, '163/81/46/82/9/55/73/7');
-
     })
 
     it('should return optimized packed items despite of items with size of 0', function () {
@@ -24,7 +23,6 @@ describe('chain', function () {
         chain.start();
 
         assert.equal(chain.packages, '163/81/46/82/9/55/73/7');
-
     })
 
     it('should return 8 optimized packets', function () {
@@ -34,7 +32,6 @@ describe('chain', function () {
         chain.start();
 
         assert.equal(chain.packets.length, 8);
-
     })
 
     it('should return optimized packed items for small size items', function () {
@@ -44,7 +41,6 @@ describe('chain', function () {
         chain.start();
 
         assert.equal(chain.packages, '14311/4231/252/523');
-
     })
 
 })

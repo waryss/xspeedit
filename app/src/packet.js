@@ -16,7 +16,7 @@ export default class Packet {
 
     addItem(item) {
         if (!this.canBeAdded(item)) {
-            throw new Error("Oh, that is too much for me! Sorry :(");
+            throw new Error('Oh, that is too much for me! Sorry :(');
         }
         this.items.push(item);
     }
