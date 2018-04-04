@@ -1,6 +1,6 @@
 'use strict'
 
-import Packet from "./packet";
+import Packet from './packet';
 
 export default class Chain {
 
@@ -19,7 +19,7 @@ export default class Chain {
 
     start() {
         if (!this.items.length) {
-            throw new Error("Chain not initialized");
+            throw new Error('Chain not initialized');
         }
         let currentPacket = new Packet();
         this.packets.push(currentPacket);

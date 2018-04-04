@@ -4,6 +4,9 @@
   "description": "XspeedIt",
   "main": "index.js",
   "scripts": {
+    "start": "nodemon app/src/index.js --exec babel-node",
+    "build": "babel app/src -d dist",
+    "serve": "node dist/index.js",
     "test": "mocha --require babel-core/register --watch --recursive app"
   },
   "repository": {
@@ -14,8 +17,10 @@
   "license": "ISC",
   "homepage": "https://github.com/waryss/xspeedit#readme",
   "devDependencies": {
+    "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
     "babel-preset-env": "^1.6.1",
-    "mocha": "^5.0.5"
+    "mocha": "^5.0.5",
+    "nodemon": "^1.17.3"
   }
 }
