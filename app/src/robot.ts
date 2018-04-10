@@ -4,11 +4,13 @@ import Chain from "./chain";
 
 export default class Robot {
 
+    public chains: Chain[];
+
     constructor() {
         this.chains = [];
     }
 
-    process(input) {
+    process(input: string): void {
         let chain = new Chain();
         this.chains.push(chain);
         chain.init(input);
@@ -16,8 +18,8 @@ export default class Robot {
         console.log(`Optimized robot : ${chain.packages} => ${chain.packets.length} used packets`);
     }
 
-    stop() {
-        this.chains = [];
+    stop(): void {
+        this.chains = null;
     }
 
 }

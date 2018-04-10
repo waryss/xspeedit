@@ -1,11 +1,11 @@
 'use strict'
 
-import readline from 'readline';
-import Robot from './Robot';
+import readline, {ReadLine} from "readline";
+import Robot from "./Robot";
 
-const robot = new Robot();
+const robot: Robot = new Robot();
 
-const prompt = readline.createInterface({
+const prompt: ReadLine = readline.createInterface({
     input: process.stdin,
     output: process.stdout
 });
@@ -14,7 +14,7 @@ prompt.setPrompt('Enter items to package >');
 
 prompt.prompt();
 
-prompt.on('line', (line) => {
+prompt.on('line', (line: string) => {
     if (line.match(/^[-+]?[1-9]\d*$/)) {
         console.log(`Items : ${line}`);
         robot.process(line);
@@ -26,7 +26,6 @@ prompt.on('line', (line) => {
             console.log(`${robot.chains.length} chains have been processed by the robot`);
             robot.stop();
             prompt.close();
-            process.stdin.destroy();
         } else {
             console.log(' ******************** Items must be only a chain of numbers ********************* ');
         }

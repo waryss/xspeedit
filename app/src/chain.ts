@@ -1,30 +1,33 @@
 'use strict'
 
-import Packet from './packet';
+import Packet from "./packet";
 
 export default class Chain {
+
+    public packets: Packet[];
+    public items: number[];
 
     constructor() {
         this.items = [];
     }
 
-    get packages() {
+    get packages(): string {
         return this.packets.join('/');
     }
 
-    init(input) {
-        this.items = Array.from(input, c => parseInt(c)).filter(x => x > 0);
+    init(input: string): void {
+        this.items = Array.from(input, (c: string) => parseInt(c)).filter((x: number) => x > 0);
         this.packets = [];
     }
 
-    start() {
+    start(): void {
         if (!this.items.length) {
             throw new Error('Chain not initialized');
         }
-        let currentPacket = new Packet();
+        let currentPacket: Packet = new Packet();
         this.packets.push(currentPacket);
         while (this.items.length) {
-            let found = this.items.find(e => {
+            let found: number = this.items.find(e => {
                 return currentPacket.canBeAdded(e);
             });
             if (found) {

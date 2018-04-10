@@ -2,30 +2,32 @@
 
 export default class Packet {
 
+    items: number[];
+
     constructor() {
         this.items = [];
     }
 
-    get CAPACITY() {
+    get CAPACITY(): number {
         return 10;
     }
 
-    get length() {
-        return this.items.reduce((a, b) => a + b, 0);
+    get length(): number {
+        return this.items.reduce((a: number, b: number) => a + b, 0);
     }
 
-    addItem(item) {
+    addItem(item: number): void {
         if (!this.canBeAdded(item)) {
             throw new Error('Oh, that is too much for me! Sorry :(');
         }
         this.items.push(item);
     }
 
-    canBeAdded(item) {
+    canBeAdded(item: number): boolean {
         return (this.length + item) <= this.CAPACITY;
     }
 
-    toString() {
+    toString(): string {
         return this.items.join('');
     }
 }

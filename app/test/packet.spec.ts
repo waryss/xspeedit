@@ -1,12 +1,12 @@
 'use strict'
 
-import assert from 'assert';
-import Packet from '../src/packet';
+import assert from "assert";
+import Packet from "../src/packet";
 
 describe('packet', function () {
 
     it('should return true when an item can be added (packet + item length is less than capacity)', function () {
-        let packet = new Packet();
+        let packet: Packet = new Packet();
 
         packet.addItem(8);
 
@@ -15,7 +15,7 @@ describe('packet', function () {
     })
 
     it('should return false when an item can not be added (packet + item length is higher than capacity)', function () {
-        let packet = new Packet();
+        let packet: Packet = new Packet();
 
         packet.addItem(7);
         packet.addItem(2);
@@ -24,8 +24,8 @@ describe('packet', function () {
     })
 
     it('should add item on packet', function () {
-        const itemSize = 8;
-        let packet = new Packet();
+        const itemSize: number = 8;
+        let packet: Packet = new Packet();
 
         packet.addItem(itemSize);
 
@@ -35,7 +35,7 @@ describe('packet', function () {
     })
 
     it('should not add item on packet', function () {
-        let packet = new Packet();
+        let packet: Packet = new Packet();
 
         packet.addItem(7);
         packet.addItem(2);

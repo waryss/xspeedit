@@ -5,10 +5,10 @@ import Chain from "../src/chain";
 
 describe('chain', function () {
 
-    const INPUT = '163841689525773';
+    const INPUT: string = '163841689525773';
 
     it('should return optimized packed items', function () {
-        let chain = new Chain();
+        let chain: Chain = new Chain();
 
         chain.init(INPUT);
         chain.start();
@@ -17,7 +17,7 @@ describe('chain', function () {
     })
 
     it('should return optimized packed items despite of items with size of 0', function () {
-        let chain = new Chain();
+        let chain: Chain = new Chain();
 
         chain.init('16384168905257730');
         chain.start();
@@ -26,7 +26,7 @@ describe('chain', function () {
     })
 
     it('should return 8 optimized packets', function () {
-        let chain = new Chain();
+        let chain: Chain = new Chain();
 
         chain.init(INPUT);
         chain.start();
@@ -35,7 +35,7 @@ describe('chain', function () {
     })
 
     it('should return optimized packed items for small size items', function () {
-        let chain = new Chain();
+        let chain: Chain = new Chain();
 
         chain.init('143141232525213');
         chain.start();

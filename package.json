@@ -4,10 +4,10 @@
   "description": "XspeedIt",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon app/src/index.js --exec babel-node",
-    "build": "babel app/src -d dist",
-    "serve": "node dist/index.js",
-    "test": "mocha --require babel-core/register --watch --recursive app"
+    "start": "npm run build && node build/index.js",
+    "test": "mocha --require ts-node/register app/test/**/**.spec.ts",
+    "build": "tsc",
+    "watch": "tsc -w"
   },
   "repository": {
     "type": "git",
@@ -17,10 +17,12 @@
   "license": "ISC",
   "homepage": "https://github.com/waryss/xspeedit#readme",
   "devDependencies": {
-    "babel-cli": "^6.26.0",
-    "babel-core": "^6.26.0",
-    "babel-preset-env": "^1.6.1",
+    "@types/mocha": "^5.0.0",
+    "@types/node": "^7.0.60",
+    "concurrently": "^3.5.1",
     "mocha": "^5.0.5",
-    "nodemon": "^1.17.3"
+    "ts-node": "^5.0.1",
+    "typescript": "^2.8.1",
+    "typings": "^2.1.1"
   }
 }
