@@ -1,4 +1,4 @@
-'use strict'
+"use strict";
 
 import Chain from "./chain";
 
@@ -11,7 +11,7 @@ export default class Robot {
     }
 
     process(input: string): void {
-        let chain = new Chain();
+        const chain: Chain = new Chain();
         this.chains.push(chain);
         chain.init(input);
         chain.start();

@@ -1,24 +1,21 @@
-'use strict'
+"use strict";
 
 export default class Packet {
 
-    items: number[];
+    public items: number[];
+    private CAPACITY: number = 10;
 
     constructor() {
         this.items = [];
     }
 
-    get CAPACITY(): number {
-        return 10;
-    }
-
     get length(): number {
-        return this.items.reduce((a: number, b: number) => a + b, 0);
+        return this.items.reduce((a, b) => a + b, 0);
     }
 
     addItem(item: number): void {
         if (!this.canBeAdded(item)) {
-            throw new Error('Oh, that is too much for me! Sorry :(');
+            throw new Error("Oh, that is too much for me! Sorry :(");
         }
         this.items.push(item);
     }
@@ -28,6 +25,7 @@ export default class Packet {
     }
 
     toString(): string {
-        return this.items.join('');
+        return this.items.join("");
     }
 }
+

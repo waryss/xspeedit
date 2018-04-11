@@ -1,4 +1,4 @@
-'use strict'
+"use strict";
 
 import Packet from "./packet";
 
@@ -12,7 +12,7 @@ export default class Chain {
     }
 
     get packages(): string {
-        return this.packets.join('/');
+        return this.packets.join("/");
     }
 
     init(input: string): void {
@@ -22,12 +22,13 @@ export default class Chain {
 
     start(): void {
         if (!this.items.length) {
-            throw new Error('Chain not initialized');
+            throw new Error("Chain not initialized");
         }
         let currentPacket: Packet = new Packet();
         this.packets.push(currentPacket);
+        let found: number;
         while (this.items.length) {
-            let found: number = this.items.find(e => {
+            found = this.items.find(e => {
                 return currentPacket.canBeAdded(e);
             });
             if (found) {

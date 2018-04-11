@@ -1,11 +1,11 @@
-'use strict'
+"use strict"
 
 import assert from "assert";
 import Packet from "../src/packet";
 
-describe('packet', function () {
+describe("packet", function () {
 
-    it('should return true when an item can be added (packet + item length is less than capacity)', function () {
+    it("should return true when an item can be added (packet + item length is less than capacity)", function () {
         let packet: Packet = new Packet();
 
         packet.addItem(8);
@@ -14,7 +14,7 @@ describe('packet', function () {
 
     })
 
-    it('should return false when an item can not be added (packet + item length is higher than capacity)', function () {
+    it("should return false when an item can not be added (packet + item length is higher than capacity)", function () {
         let packet: Packet = new Packet();
 
         packet.addItem(7);
@@ -23,7 +23,7 @@ describe('packet', function () {
         assert.ok(!packet.canBeAdded(5));
     })
 
-    it('should add item on packet', function () {
+    it("should add item on packet", function () {
         const itemSize: number = 8;
         let packet: Packet = new Packet();
 
@@ -34,7 +34,7 @@ describe('packet', function () {
 
     })
 
-    it('should not add item on packet', function () {
+    it("should not add item on packet", function () {
         let packet: Packet = new Packet();
 
         packet.addItem(7);
