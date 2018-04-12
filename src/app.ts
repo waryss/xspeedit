@@ -1,7 +1,8 @@
 "use strict";
 
 import readline, { ReadLine } from "readline";
-import Robot from "./Robot";
+import Robot from "./models/Robot";
+import Chain from "./models/Chain";
 
 const robot: Robot = new Robot();
 
@@ -18,6 +19,8 @@ prompt.on("line", (line: string) => {
     if (line.match(/^[-+]?[1-9]\d*$/)) {
         console.log(`Items : ${line}`);
         robot.process(line);
+        const chain: Chain = robot.chains[robot.chains.length - 1];
+        console.log(`Optimized robot : ${chain.packages} => ${chain.packets.length} used packets`);
     } else {
         if ("help" == line) {
             console.log(" ***** Enter a chain of items and I will maximize their packaging on packet ***** ");

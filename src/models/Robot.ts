@@ -1,6 +1,6 @@
 "use strict";
 
-import Chain from "./chain";
+import Chain from "./Chain";
 
 export default class Robot {
 
@@ -15,7 +15,6 @@ export default class Robot {
         this.chains.push(chain);
         chain.init(input);
         chain.start();
-        console.log(`Optimized robot : ${chain.packages} => ${chain.packets.length} used packets`);
     }
 
     stop(): void {

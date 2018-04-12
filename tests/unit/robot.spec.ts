@@ -1,7 +1,7 @@
 "use strict"
 
 import assert from "assert";
-import Robot from "../src/robot";
+import Robot from "../../src/models/Robot";
 
 describe("robot", function () {
 

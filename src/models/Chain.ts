@@ -1,6 +1,6 @@
 "use strict";
 
-import Packet from "./packet";
+import Packet from "./Packet";
 
 export default class Chain {
 

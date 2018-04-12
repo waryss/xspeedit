@@ -8,7 +8,7 @@
     "test": "npm run tslint && jest -b --coverage --silent",
     "build": "npm run tslint && tsc",
     "tslint": "tslint -c tslint.json -p tsconfig.json",
-    "watch": "concurrently \"tsc -w\"  \"jest  -b --watch --silent\""
+    "watch": "concurrently \"tsc -w\"  \"jest --watch --silent\""
   },
   "repository": {
     "type": "git",
@@ -29,11 +29,10 @@
     "typings": "^2.1.1"
   },
   "jest": {
-    "coverageDirectory": "coverage",
     "transform": {
       "^.+\\.ts?$": "ts-jest"
     },
-    "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$",
+    "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.(ts?)$",
     "moduleFileExtensions": [
       "ts",
       "js"

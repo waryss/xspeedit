@@ -1,7 +1,7 @@
 "use strict"
 
 import assert from "assert";
-import Chain from "../src/chain";
+import Chain from "../../src/models/Chain";
 
 describe("chain", function () {
 
