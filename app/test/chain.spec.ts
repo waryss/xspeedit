@@ -7,6 +7,13 @@ describe("chain", function () {
 
     const INPUT: string = "163841689525773";
 
+    it("should not start chain when It is not inizialized yet", function () {
+        let chain: Chain = new Chain();
+
+        assert.throws(() => chain.start(), Error);
+        assert.equal(chain.packages, "");
+    })
+
     it("should return optimized packed items", function () {
         let chain: Chain = new Chain();
 

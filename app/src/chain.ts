@@ -9,6 +9,7 @@ export default class Chain {
 
     constructor() {
         this.items = [];
+        this.packets = [];
     }
 
     get packages(): string {
@@ -17,7 +18,6 @@ export default class Chain {
 
     init(input: string): void {
         this.items = Array.from(input, (c: string) => parseInt(c)).filter((x: number) => x > 0);
-        this.packets = [];
     }
 
     start(): void {
